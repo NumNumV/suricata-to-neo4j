@@ -76,7 +76,7 @@ def get_suricata_data_from_elasticsearch(es,index):
             }
         }
     }
-    result = es.search(index="filebeat-7.17.18-2024.03.05-000001", body=query, size=10000)
+    result = es.search(index=index, body=query, size=10000)
     return result['hits']['hits']
 
 # Function that insert Suricata data in Neo4j with link aggregation
